@@ -1,0 +1,20 @@
+name: learn-github-actions
+on: [push]
+jobs:
+    checks-pip-version:
+      environment: staging
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+          with:
+            python-version: '3.8.9'
+            architecture: 'x64'
+        - name: Print Secret
+          env:
+            SUPER_SECRET: ${{ secrets.HELLO }}
+          run: |
+            echo $SUPER_SECRET;
+            which scp
+        - name: Display Python Version
+          run: python -c "import sys; print(sys.version)"

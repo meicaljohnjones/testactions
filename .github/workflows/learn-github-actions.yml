@@ -21,6 +21,7 @@ jobs:
         - name: Copy file to server
           uses: appleboy/scp-action@master
           with:
+            host: "meicaljohnjones.com"
             username: ${{ secrets.SSH_USER }} 
             password: ${{ secrets.SSH_PASS }} 
             source: "README.md"

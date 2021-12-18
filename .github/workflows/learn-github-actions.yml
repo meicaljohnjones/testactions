@@ -24,6 +24,6 @@ jobs:
             host: "meicaljohnjones.com"
             username: ${{ secrets.SSH_USER }} 
             password: ${{ secrets.SSH_PASS }} 
-            source: "README.md"
-            target: "README.md"
+            source: "*"
+            target: "."
 
